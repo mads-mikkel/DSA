@@ -26,7 +26,7 @@ namespace DSA.HowToMeasure
         {
             // Arrange:
             int runs = 10;                                          // Number of measurements
-            long[] ticks = new long[runs];                          // Array to hold the measuments
+            long[] ticks = new long[runs];                          // Array to hold the measurements
             int elements = 10_000_000;                              // Number of elements
 
             // Generate data:
@@ -47,8 +47,8 @@ namespace DSA.HowToMeasure
 
                 // Measurement presentation:
                 long measuredTicks = stopwatch.Elapsed.Ticks;       // Save measurement
-                ticks[i] = measuredTicks;                           // Save mesurem
-                string runResult = $"Run {i + 1}: {measuredTicks}"; // Textualized measurement
+                ticks[i] = measuredTicks;                           // Save mesurements
+                string runResult = $"Run {i + 1}: {measuredTicks}"; // Textual measurement
                 WriteLine(runResult);                               // Print mesurement
             }
 
