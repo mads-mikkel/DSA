@@ -1,5 +1,6 @@
 ﻿/* Author: Mads Mikkel Rasmussen, copyright 2021, all rights reserved.
- * Repo: 
+ * Repo: https://github.com/mads-mikkel/DSA
+ * Platform: .NET 5.0
  * Instructions: Use Visual Studio RELEASE configuration for most accurate results. The generated
  * application should not be started from Visual Studio, but from its location in the 
  * bin/release/net5.0 folder
