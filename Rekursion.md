@@ -30,4 +30,7 @@ alt="Recursion for Beginners: A Beginner's Guide to Recursion" width="240" heigh
 ## Opgaver
 <ol>
  <li> Lav et program der beregner 
+ 
 </ol>
+
+<math xmlns = "http://www.w3.org/1998/Math/MathML"><mrow>n!</mrow></math>
