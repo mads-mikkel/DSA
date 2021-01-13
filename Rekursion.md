@@ -5,6 +5,8 @@ Denne opgave knytter sig til følgende læringsmål:
 
 
 ## Viden
+Se [Colt Steele, Recursion Crash Course](https://www.youtube.com/watch?v=lMBVwYrmFZQ) om Martin og Dragen...
+
 > *"Alt hvad du kan med rekursion, kan du med en løkke og en stak"*
 
 Rekursion løser problemer hvor begge disse betingelser er til stede:
@@ -101,11 +103,19 @@ int Faculty(int n)
 Observér 14. iteration, hvad sker der mon her? Giv et bud og tilret koden, således output er korrekt for 21 iterationer.
 
 ### 4: Exceptions
-Et objekt af `System.Ecxeption` har en property `Inner`, også af typen `System.Ecxeption`. Med andre ord *kan* en undtagelse have netop én indre undtagelse, og den undtagelse *kan* have en indre undtagelse, osv. Du skal konstruere et .NET 5 program i et klasse bibliotek, der rekursivt kan generere en `IEnumerable<Exception>` der indeholder alle undtagelserne, ordnet med roden først. Inden du programmerer, skriv da pseudokode hvori du identificerer base case og recursive case. Du skal teste din løsning med en unit test, inden du laver en NuGet pakke som uploades til nuget.org - den kunne f.eks. hedde `<ditProgrammørNavn>.ExceptionHandling`. På den måde kan du anvende denne pakke i alle dine fremtidige løsninger. Du finder information om hvordan man laver en NuGet pakke 
+Et objekt af `System.Exception` har en property `Inner`, også af typen `System.Exception`. Med andre ord *kan* en undtagelse have netop én indre undtagelse, og den undtagelse *kan* have en indre undtagelse, osv. Du skal konstruere et .NET 5 program i et klasse bibliotek, der rekursivt kan generere en `IEnumerable<Exception>` der indeholder alle undtagelserne, ordnet med roden først. Inden du programmerer, skriv da pseudokode hvori du identificerer base case og recursive case. Du skal teste din løsning med en unit test, inden du laver en NuGet pakke som uploades til nuget.org - den kunne f.eks. hedde `<ditProgrammørNavn>.ExceptionHandling`. På den måde kan du anvende denne pakke i alle dine fremtidige løsninger. Du finder information om hvordan man laver en NuGet pakke 
 [her](https://www.youtube.com/watch?v=bCoVexnomuk).
 
 
 ## Ekstraopgaver
-A. Tilret opgave 3 således at der kan foretages flere tusinde iterationer med korrekt output. *Hint: `System.Numerics`*.
+**A.** Tilret opgave 3 således at der kan foretages flere tusinde iterationer med korrekt output. *Hint: `System.Numerics`*.
+
+**B.** Lav iterative løsninger for både Fibunacci og Fakultet. Sammenlign tiden det tager at køre programmerne med med grafer i Excel, med de respektive rekursive løsninger og konkluder på det.
+
+**C.** Roslyn compileren kompilerer C# kode. Undersøg om Roslyn optimerer for tail-recursion. Tail-recursion er rekursion hvor den sidste instruktion i metoden er det rekursive kald.
+
+**D.** For at perspektivere emnet, læs [dette](https://www.educative.io/blog/recursion) blogindlæg.
+
+**E.** Lav en rekursion uden base case, og find ud af hvor mange kald der er på stakken når den frygtede StackOverflowException udløses.
 ___
 © 2021 Mads Mikkel Rasmussen. Alle rettigheder forbeholdes.
