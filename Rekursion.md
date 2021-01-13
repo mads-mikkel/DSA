@@ -3,6 +3,7 @@ Denne opgave knytter sig til følgende læringsmål:
 * Jeg har viden om hvordan rekursion virker og adskiller sig fra iteration
 * Jeg kan lave rekursive algoritmer
 
+
 ## Viden
 > *"Alt hvad du kan med rekursion, kan du med en løkke og en stak"*
 
@@ -29,7 +30,54 @@ alt="Recursion for Beginners: A Beginner's Guide to Recursion" width="240" heigh
 
 
 ## Opgaver
-1. Lav et program der rekursivt beregner *n!* for *n* op til 14. Dit output skal se således ud:
+### 1: Simpleste rekursion
+Observer følgende kode:
+```cs
+int SimpleRecursion(int n)
+{
+    if(n == 0)  // Base case
+        return -1;
+    else        // Recursive case
+        return SimpleRecursion(n - 1);
+}
+```
+Resultatet når metoden kaldes med f.eks. `SimpleRecursion(3);` vil være -1. Lav ovenstående program og efterprøv F11 i Visual Studio. På denne måde får du indblik i hvordan rekursionen foregår. Hold øje med værdien af parameteren `n` i Locals vinduet i Visual Studio, og også metodestakken i Call Stack vinduet, særligt når `n` får værdien `0`.
+
+### 2: Fibonacci
+Du har allerede viden om Fionacci sekvensen fra videoen. her er pseudekode for algoritmen:
+```
+function Fibonacci(n)
+    if n < 2
+        return n
+    else
+        return Fibonacci(n-1) + Fibonacci(n-2)
+```
+Lav et program der udskriver sekvensen af Fibonacci tal for 2 til 20, f.eks. ved
+```
+procedure FibonacciSequence
+    for n from 2 to 20
+        print Fibonacci(n)
+``` 
+> Forskellen på en funktion og en procedure er at en funktion returnerer en værdi, hvorimod en procedure ikke returnerer en værdi.
+
+Når programmet er lavet, så dobbelttjek at sekvensen er korrekt. 
+
+Det viser sig, at når *n* bliver større så tager det længere og længere tid at køre programmet. Prøv f.eks. med *n = 40*. Lad os undersøge hvordan tiden udvikler sig med *n*:
+```
+procedure FibonacciSequence
+    for n from 2 to 45
+        start timer
+        result = Fibonacci(n)
+        stop timer
+        reset timer
+    print n, result and elapsed time
+``` 
+> *Hint: `System.Diagnostics.StopWatch`*
+
+Indtast *n* med den tilhørende tid i Ticks et Excel ark og lav en graf. Hvordan udvikler grafen sig: lineært, med potens, eksponentielt? - og hvorfor?
+
+### 3: Fakultet 
+Lav et program der rekursivt beregner *n!* for *n* op til 14. Dit output skal se således ud:
 ```
 1: 1
 2: 2
@@ -52,8 +100,12 @@ int Faculty(int n)
 ```
 Observér 14. iteration, hvad sker der mon her? Giv et bud og tilret koden, således output er korrekt for 21 iterationer.
 
+### 4: Exceptions
+Et objekt af `System.Ecxeption` har en property `Inner`, også af typen `System.Ecxeption`. Med andre ord *kan* en undtagelse have netop én indre undtagelse, og den undtagelse *kan* have en indre undtagelse, osv. Du skal konstruere et .NET 5 program i et klasse bibliotek, der rekursivt kan generere en `IEnumerable<Exception>` der indeholder alle undtagelserne, ordnet med roden først. Inden du programmerer, skriv da pseudokode hvori du identificerer base case og recursive case. Du skal teste din løsning med en unit test, inden du laver en NuGet pakke som uploades til nuget.org - den kunne f.eks. hedde `<ditProgrammørNavn>.ExceptionHandling`. På den måde kan du anvende denne pakke i alle dine fremtidige løsninger. Du finder information om hvordan man laver en NuGet pakke 
+[her](https://www.youtube.com/watch?v=bCoVexnomuk).
 
- 
 
 ## Ekstraopgaver
-A. Tilret opgave 1 således at der kan foretages flere tusinde iterationer med korrekt output. *Hint: `System.Numerics`*.
+A. Tilret opgave 3 således at der kan foretages flere tusinde iterationer med korrekt output. *Hint: `System.Numerics`*.
+___
+© 2021 Mads Mikkel Rasmussen. Alle rettigheder forbeholdes.
