@@ -117,5 +117,7 @@ Et objekt af `System.Exception` har en property `Inner`, også af typen `System.
 **D.** For at perspektivere emnet, læs [dette](https://www.educative.io/blog/recursion) blogindlæg.
 
 **E.** Lav en rekursion uden base case, og find ud af hvor mange kald der er på stakken når den frygtede StackOverflowException udløses.
+
+**F.** Lav Towers of Hanoi med grafisk brugergrænseflade.
 ___
 © 2021 Mads Mikkel Rasmussen. Alle rettigheder forbeholdes.
